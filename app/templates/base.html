@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+
+<head>
+    <meta charset="utf-8">
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="site.css") }}">
+    <link rel="shotcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/bola.ico') }}">
+
+
+
+</head>
+
+<body>
+    <div class="fixed-bottom">
+        <div class="float-right">2019 © MauTrick's Corp.......................</div>
+    </div>
+    {% block tudo %}
+    {% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
+        <a class="navbar-brand" href="{{ url_for('principal')}}">
+            <img src="https://svgsilh.com/svg/25775.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Futebol
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{ url_for('origem')}}">
+                        <img src="https://www.ofitexto.com.br/wp-content/themes/ofitexto/assets/images/icon-livro.png"
+                            width="30" height="30" class="d-inline-block align-top" alt="">
+                        Origem
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{ url_for('regulamento') }}">
+                        Regulamento
+                    </a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Campeonatos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('brasileirao2018')}}">Brasileirão 2018</a>
+                        <a class="dropdown-item" href="{{ url_for('brasileirao2008')}}">Brasileirão 2008</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url_for('copadomundo')}}">Copa do Mundo</a>
+                    </div>
+                </li> -->
+
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                        <a class="navbar-brand" href="{{ url_for('lista') }}">
+                            Usuarios
+                        </a>
+                </li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Campeonatos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('brasileirao2018')}}">Brasileirão 2018</a>
+                        <a class="dropdown-item" href="{{ url_for('brasileirao2008')}}">Brasileirão 2008</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url_for('copadomundo')}}">Copa do Mundo</a>
+                    </div>
+                </li>
+                {% endif %}
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+            </form>
+
+
+            <!-- Logar -->
+            {% if current_user.is_authenticated %}
+            <div class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle btn-lg, btn btn-dark" href="" id="navbarDropdown" role="button"
+                    data-toggle="dropdown">
+                    <strong>{{ current_user.name }}</strong>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url_for('logout')}}">Sair</a>
+                </div>
+            </div>
+
+            {% else %}
+            <button class="btn btn-dark"><a class="navbar-brand" href="{{ url_for('login') }}">Entrar</a></button>
+            <a href="{{ url_for('register') }}"></a>
+            <button class="btn btn-dark"><a class="navbar-brand"
+                    href="{{ url_for('register') }}">Registrar-se</a></button>
+            {% endif %}
+            <!-- Registrar-se -->
+
+
+
+
+    </nav>
+
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <ul class=flashes>
+            {% for message in messages %}
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+
+
+
+
+
+    {% block body %}{% endblock %}
+    {% block content %}
+    {% endblock %}
+
+
+    <!--rodape-->
+    <div class="rodape">
+        Site desenvolvido por Mauricio de Freitas Tebechrani
+    </div>
+
+
+
+    </div>
+    <script src="{{ url_for('static', filename="js.bootstrap.min.js")}}"></script>
+</body>
+<footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</footer>
+
+</html>

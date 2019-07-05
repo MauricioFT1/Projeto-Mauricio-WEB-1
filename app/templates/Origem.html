@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Origem - Futebol</title>
+{% endblock %}
+{% block tudo %}
+<div class="tudo2">
+    {% endblock %}
+    {% block content %}
+
+    <div class="Origem">
+        <div class="Otitulo">
+            <h1>Origem</h1>
+        </div>
+        <p>
+            Quase todas as culturas do mundo possuem alguma referência ao futebol. Chineses, japoneses, italianos,
+            gregos antigos,
+            persas, vikings e muitos outros povos já jogavam algum tipo de jogo de bola em tempos muitos distantes. Os
+            chineses,
+            por exemplo, já tinham um jogo parecido há 3.000 anos atrás. Na Grécia antiga e em Roma, os jogos de bola
+            era utilizados
+            para preparar soldados para a guerra. Já na América do Sul e na América Central existiu um jogo chamado
+            "Tlatchi" semelhante
+            ao futebol.
+        </p>
+        <p>
+            Porém, foi na Inglaterra que o futebol realmente começou a tomar forma. Tudo começou em 1863, quando duas
+            associações de
+            jogos de bola (futebol association e futebol tipo rugby) se separaram, porque os partidários do "rugby" não
+            aceitavam um
+            jogo em que era proibido segurar a bola com as mãos. E isso acabou dando origem à The English Football
+            Association,
+            primeira associação inglesa de futebol.
+        </p>
+        <p>
+            Apenas 8 anos depois, a EFA já contava com 50 clubes membros. A primeira competição mundial (a FA Cup)
+            aconteceu no mesmo ano.
+            Antes de se ouvir sobre o futebol na Europa, já aconteciam partidas internacionais na Grã-Bretanha. A
+            primeira delas foi em 1872,
+            entre Inglaterra e Escócia.
+        </p>
+        <p>
+            Depois da Associação Inglesa de Futebol, vieram: a associação escocesa (1873), a associação de Gales (1875)
+            e a irlandesa (1880). Devido à influência britânica na época, o futebol começou a se espalhar por outros
+            países. As seguintes associações (não britânicas) foram: Holanda e Dinamarca (1889), Nova Zelândia (1891),
+            Argentina (1893), Chile (1895), Suíça e Bélgica (1895), Itália (1898), Alemanha e Uruguai (1900), Hungria
+            (1901) e Finlândia (1907). Quando a FIFA foi fundada em Paris, em maio de 1904, havia sete países membros:
+            França, Bélgica, Dinamarca, Holanda, Espanha (representada pelo Madri FC), Suécia e Suíça. A Confederação
+            Brasileira de Futebol surgiu em 1919.
+        </p>
+        <h3 align="center">Brasil x Hungria 1954</h3>
+        <img src="{{ url_for('static', filename='img/antiga.jpg') }}" alt="">
+        <br>
+        Jovem pan - uol
+    </div>
+
+    <br>
+    <br>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('principal')}}">
+                    <<</a> </li> <li class="page-item"><a class="page-link" href="{{ url_for('principal')}}">Futebol</a></li>
+            <li class="page-item active"><a class="page-link" href="{{ url_for('origem')}}">Origem</a></li>
+            <li class="page-item"><a class="page-link" href="{{ url_for('regulamento')}}">Regulamentos</a></li>
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('regulamento')}}">>></a>
+            </li>
+        </ul>
+    </nav>
+
+<hr>
+</div>
+
+
+
+{% endblock %}

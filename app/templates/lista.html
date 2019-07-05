@@ -1,0 +1,43 @@
+{% block tudo %}
+<div class="tudo">
+    {% endblock %}
+
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <head>
+        <title>Lista</title>
+    </head>
+    <br>
+    <div class="col-md-8 col-md-offset-8">
+        <h1>Lista de usuarios</h1>
+        <hr>
+        <a href="{{ url_for('register')}}" class="btn btn-dark" role="button">
+                Registrar novo usuario</a>
+        <hr>
+        <table border="4">
+            <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Password</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Excluir</td>
+                <td>Atualizar</td>
+            </tr>
+            {% for User in usuarios %}
+            <tr>
+                <td>{{ User.id }}</td>
+                <td>{{ User.username }}</td>
+                <td>{{ User.password }}</td>
+                <td>{{ User.name }}</td>
+                <td>{{ User.email }}</td>
+                <td><a href="/excluir/{{ User.id }}">X</a></td>
+                <td><a href="/atualizar/{{ User.id }}">Atualizar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <form>
+            <a href="{{ url_for('principal')}}" class="btn btn-dark" role="button">
+                << Voltar</a> </form> </div> {% endblock %}

@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Brasileirão 2008 - Futebol</title>
+{% endblock %}
+{% block tudo %}
+<div class="tudo1">
+    {% endblock %}
+    {% block content %}
+
+    <br>
+    <div class="Titulo">
+        <h1>BRASILEIRÃO 2008</h1>
+    </div>
+
+
+    <div class="Tabela">
+
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Pocisão</th>
+                    <th scope="col">P</th>
+                    <th scope="col">J</th>
+                    <th scope="col">V</th>
+                    <th scope="col">E</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Saopaulo.png') }}" width="30" height="30" alt=""> 1. São Paulo</th>
+                    <td>75</td>
+                    <td>38</td>
+                    <td>21</td>
+                    <td>12</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Gremio.png') }}" width="30" height="30" alt=""> 2. Grêmio</th>
+                    <td>72</td>
+                    <td>38</td>
+                    <td>21</td>
+                    <td>9</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Cruzeiro.png') }}" width="30" height="30" alt=""> 3. Cruzeiro</th>
+                    <td>67</td>
+                    <td>38</td>
+                    <td>21</td>
+                    <td>4</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Palmeiras.png') }}" width="30" height="30" alt=""> 4. Palmeiras</th>
+                    <td>65</td>
+                    <td>38</td>
+                    <td>19</td>
+                    <td>8</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Flamengo.png') }}" width="30" height="30" alt=""> 5. Flamengo</th>
+                    <td>64</td>
+                    <td>38</td>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Internacional.png') }}" width="30" height="30" alt=""> 6. Internacional</th>
+                    <td>54</td>
+                    <td>38</td>
+                    <td>15</td>
+                    <td>9</td>
+                    <td>14</td>
+                </tr>
+                <th scope="row"><img src="{{ url_for('static', filename='img/Botafogo.png') }}" width="30" height="30" alt=""> 7. Botafogo</th>
+                <td>53</td>
+                <td>38</td>
+                <td>15</td>
+                <td>5</td>
+                <td>15</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Goias.png') }}" width="30" height="30" alt=""> 8. Goiás</th>
+                    <td>53</td>
+                    <td>38</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Coritiba.png') }}" width="30" height="30" alt=""> 9. Coritiba</th>
+                    <td>53</td>
+                    <td>38</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/vitoria.png') }}" width="30" height="30" alt=""> 10. Vitória</th>
+                    <td>52</td>
+                    <td>38</td>
+                    <td>15</td>
+                    <td>7</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/sport.png') }}" width="30" height="30" alt=""> 11. Sport</th>
+                    <td>52</td>
+                    <td>38</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/atletico-mg.png') }}" width="30" height="30" alt=""> 12. Atlético-MG</th>
+                    <td>48</td>
+                    <td>38</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Athletico-pr.png') }}" width="30" height="30" alt=""> 13. Atlético-PR</th>
+                    <td>45</td>
+                    <td>38</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Fluminense.png') }}" width="30" height="30" alt=""> 14. Fluminense</th>
+                    <td>45</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Santos.png') }}" width="30" height="30" alt=""> 15. Santos</th>
+                    <td>45</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/nautico.png') }}" width="30" height="30" alt=""> 16. Náutico</th>
+                    <td>44</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Figueirense.png') }}" width="30" height="30" alt=""> 17. Figueirense</th>
+                    <td>44</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Vasco.png') }}" width="30" height="30" alt=""> 18. Vasco</th>
+                    <td>40</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Portuguesa.png') }}" width="30" height="30" alt=""> 19. Portuguesa</th>
+                    <td>38</td>
+                    <td>38</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <th scope="row"><img src="{{ url_for('static', filename='img/Ipatinga.png') }}" width="30" height="30" alt=""> 20. Ipatinga</th>
+                    <td>35</td>
+                    <td>38</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>21</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    {% endblock %}

@@ -1,0 +1,51 @@
+{% block tudo %}
+<div class="tudo">
+    {% endblock %}
+
+    {% extends 'base.html' %}
+    {% block content %}
+
+<head>
+    <title>Login</title>
+</head>
+    <br>
+    <div class="col-md-4 col-md-offset-4">
+        <h2>Login</h2>
+        <form action="" method="POST">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                <label>Username</label>
+                {{ form.username(class="form-control", placeholder="Usuário")}}
+                {% if form.errors.username %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form.errors.username %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Senha</label>
+                {{ form.password(class="form-control", placeholder="Senha")}}
+                {% if form.errors.password %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form.errors.password %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            não possui uma conta?
+            <a href="{{ url_for('register') }}">clique aqui!</a>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-dark btn-lg">Entrar</button>
+            <br>
+        </form>
+        <br>
+    </div>
+    {% endblock %}

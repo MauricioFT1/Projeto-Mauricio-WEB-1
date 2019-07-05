@@ -1,0 +1,106 @@
+{% block tudo %}
+<div class="tudo">
+    {% endblock %}
+
+
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <head>
+        <title>Registro</title>
+    </head>
+    <br>
+    <div class="col-md-4 col-md-offset-4">
+        <h2>Registro</h2>
+        <form action="" method="POST">
+            {{ form_register.csrf_token }}
+            <div class="form-group">
+                <label>Nome de usuário</label>
+                {{ form_register.username(class="form-control")}}
+                {% if form_register.errors.username %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.username %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Senha</label>
+                {{ form_register.password(class="form-control")}}
+                {% if form_register.errors.password %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.password %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Confirmar Senha</label>
+                {{ form_register.password2(class="form-control")}}
+                {% if form_register.errors.password2 %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.password2 %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Nome completo</label>
+                {{ form_register.name(class="form-control")}}
+                {% if form_register.errors.name %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.name %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                {{ form_register.email(class="form-control")}}
+                {% if form_register.errors.email %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.email %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label>Confirmar Email</label>
+                {{ form_register.email2(class="form-control")}}
+                {% if form_register.errors.email2 %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for e in form_register.errors.email2 %}
+                        <li>{{ e }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            Já possui uma conta?
+            <a href="{{ url_for('login') }}">clique aqui!</a>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-dark btn-lg">Registrar</button>
+        </form>
+        
+
+
+        <br>
+    </div>
+    {% endblock %}
